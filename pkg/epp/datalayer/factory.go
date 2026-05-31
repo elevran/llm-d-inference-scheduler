@@ -38,6 +38,6 @@ type PoolInfo interface {
 // providing methods to allocate and retire endpoints. This can potentially be used for
 // pooled memory or other management chores in the implementation.
 type EndpointFactory interface {
-	NewEndpoint(parent context.Context, inEndpointMetadata *fwkdl.EndpointMetadata, poolinfo PoolInfo) fwkdl.Endpoint
+	NewEndpoint(parent context.Context, inEndpointMetadata *fwkdl.EndpointMetadata) fwkdl.Endpoint
 	ReleaseEndpoint(ep fwkdl.Endpoint)
 }

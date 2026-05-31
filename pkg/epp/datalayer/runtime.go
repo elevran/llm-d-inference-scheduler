@@ -367,7 +367,7 @@ func (r *Runtime) Start(ctx context.Context, mgr ctrl.Manager) error {
 }
 
 // NewEndpoint sets up data polling on the provided endpoint.
-func (r *Runtime) NewEndpoint(ctx context.Context, endpointMetadata *fwkdl.EndpointMetadata, _ PoolInfo) fwkdl.Endpoint {
+func (r *Runtime) NewEndpoint(ctx context.Context, endpointMetadata *fwkdl.EndpointMetadata) fwkdl.Endpoint {
 	logger, _ := logr.FromContext(ctx)
 	logger = logger.WithValues("endpoint", endpointMetadata.GetNamespacedName())
 

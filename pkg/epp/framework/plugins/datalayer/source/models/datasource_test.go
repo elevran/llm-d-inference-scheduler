@@ -50,7 +50,7 @@ func TestDatasource(t *testing.T) {
 		Address: "1.2.3.4:5678",
 	}
 
-	endpoint := runtime.NewEndpoint(ctx, pod, nil)
+	endpoint := runtime.NewEndpoint(ctx, pod)
 	assert.NotNil(t, endpoint, "failed to create endpoint")
 
 	err = source.Dispatch(ctx, endpoint)

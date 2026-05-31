@@ -52,7 +52,7 @@ type mockEndpointFactory struct {
 	returnNil bool
 }
 
-func (f *mockEndpointFactory) NewEndpoint(_ context.Context, meta *fwkdl.EndpointMetadata, _ datalayer.PoolInfo) fwkdl.Endpoint {
+func (f *mockEndpointFactory) NewEndpoint(_ context.Context, meta *fwkdl.EndpointMetadata) fwkdl.Endpoint {
 	if f.returnNil {
 		return nil
 	}
