@@ -20,5 +20,3 @@ schedulingProfiles:
 requestHandler:
   parser:
     pluginRef: openai-parser
-featureGates:
-  - enableLegacyMetrics

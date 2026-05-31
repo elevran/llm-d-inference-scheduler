@@ -29,8 +29,7 @@ import (
 )
 
 // TestFullDuplexStreamed_DataLayer runs integration tests through the datalayer metrics pipeline.
-// It mirrors a representative subset of hermetic_test.go test cases but uses the data layer
-// (mock DataSource) instead of the standard FakePodMetricsClient.
+// It mirrors a representative subset of hermetic_test.go test cases using a mock DataSource.
 func TestFullDuplexStreamed_DataLayer(t *testing.T) {
 	// Datalayer tests always run in standard mode with base resources (priority=2 in InferenceObjectives).
 	tests := commonTestCases(func(p int) int { return p })
