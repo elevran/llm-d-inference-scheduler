@@ -676,7 +676,7 @@ func applyDeprecatedEnvFeatureGate(envVar, featureName, featureGate string, rawC
 }
 
 func (r *Runner) configureAndStartDatalayer(ctx context.Context, cfg *datalayer.Config, mgr ctrl.Manager) error {
-	if err := r.dlRuntime.Configure(cfg, true, "", setupLog); err != nil {
+	if err := r.dlRuntime.Configure(cfg, setupLog); err != nil {
 		return err
 	}
 
@@ -883,7 +883,7 @@ func (r *Runner) runWithFileDiscovery(ctx context.Context, opts *runserver.Optio
 		return err
 	}
 
-	if err := r.dlRuntime.Configure(eppConfig.DataConfig, true, "", setupLog); err != nil {
+	if err := r.dlRuntime.Configure(eppConfig.DataConfig, setupLog); err != nil {
 		return fmt.Errorf("failed to configure datalayer: %w", err)
 	}
 

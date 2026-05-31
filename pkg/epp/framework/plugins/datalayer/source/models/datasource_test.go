@@ -38,7 +38,7 @@ func TestDatasource(t *testing.T) {
 	pollingInterval := 50 * time.Millisecond
 	runtime := datalayer.NewRuntime(pollingInterval)
 
-	err = runtime.Configure(cfg, true, "", logr.Logger{})
+	err = runtime.Configure(cfg, logr.Logger{})
 	assert.Nil(t, err, "failed to configure runtime")
 
 	ctx := context.Background()

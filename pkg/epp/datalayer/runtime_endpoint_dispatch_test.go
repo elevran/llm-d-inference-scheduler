@@ -48,7 +48,7 @@ func TestNewEndpointDispatchesEventWithNoPollers(t *testing.T) {
 			},
 		},
 	}
-	assert.NoError(t, r.Configure(cfg, false, "", logger))
+	assert.NoError(t, r.Configure(cfg, logger))
 
 	pod := &fwkdl.EndpointMetadata{
 		NamespacedName: types.NamespacedName{Name: "pod1", Namespace: "default"},

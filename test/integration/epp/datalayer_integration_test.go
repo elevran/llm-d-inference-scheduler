@@ -39,7 +39,7 @@ func TestFullDuplexStreamed_DataLayer(t *testing.T) {
 			ctx, cancel := context.WithCancel(context.Background())
 			defer cancel()
 
-			h := NewTestHarness(ctx, t, WithStandardMode(), WithDataLayer())
+			h := NewTestHarness(ctx, t, WithStandardMode())
 			h.WithBaseResources().WithPods(tc.pods).WaitForSync(len(tc.pods), modelMyModel)
 			if len(tc.pods) > 0 {
 				h.WaitForReadyPodsMetric(len(tc.pods))

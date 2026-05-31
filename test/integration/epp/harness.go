@@ -133,12 +133,6 @@ func WithTracing() HarnessOption {
 	}
 }
 
-// WithDataLayer is a no-op kept for backward compatibility.
-// All harness instances now use the data layer pipeline by default.
-func WithDataLayer() HarnessOption {
-	return func(_ *HarnessConfig) {}
-}
-
 // metricsBackend abstracts how pod metrics are injected into the test environment.
 type metricsBackend interface {
 	SetPodMetrics(m map[types.NamespacedName]*fwkdl.Metrics)
